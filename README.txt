@@ -73,9 +73,10 @@
 	
 Project 2 — GA + ANN
 Introduction
-	You will recall the lecture discussions of Genetic Algorithms (GAs) and “Feed-Forward” MultiLayer Perceptrons (MLPs), one of the variants of Artificial Neural Networks (ANNs). In this project we will seed a GA with a population of MLPs. Then, rather than use backpropagation learning for a 
-single MLP with a fixed node layout, we will use the GA mating and survival mechanism to attempt to 
-learn a good MLP architecture over several generations of MLP "critters".
+	You will recall the lecture discussions of Genetic Algorithms (GAs) and “Feed-Forward” MultiLayer Perceptrons (MLPs), 
+one of the variants of Artificial Neural Networks (ANNs). In this project we will seed a GA with a population of MLPs. Then, 
+rather than use backpropagation learning for a single MLP with a fixed node layout, we will use the GA mating and survival 
+mechanism to attempt to learn a good MLP architecture over several generations of MLP "critters".
 	To do this, we will judge the fitness of individual MLP critters through a set of pre-classed Feature 
 vectors. These fitness results will help determine which of the current generation of critters should 
 mate to generate new kids for the next generation, and which older critters should be purged from the 
@@ -112,11 +113,13 @@ and 3 possible classes for each wildspace vector, then #W = (3*10) + (10*3) = 6*
 Note, in this case, that each hidden node HJ (the J-th H-node of the hidden layer) has #HJ = (#X + #Y) 
 associated link weights: the input #X links and the output #Y links.
 	Therefore, a simple format for a critter's DNA will be one large weights list where, for each hidden 
-node (HJ), the weights will be listed in the order of X1-to-HJ, X2-to-HJ, ... XN-to-HJ, HJ-to-Y1, HJ-to-Y2, ... HJ-to-YM. (Here, N=#X and M=#Y.)
-So, for a given HJ hidden node, its sub-list of #HJ weights will be all together in this format, X-to-HJ weights first followed by HJ-to-Y weights. And 
-then we merely append each hidden node's sub-lists together to form the full MLP list of weights.
+node (HJ), the weights will be listed in the order of X1-to-HJ, X2-to-HJ, ... XN-to-HJ, HJ-to-Y1, HJ-to-Y2, 
+... HJ-to-YM. (Here, N=#X and M=#Y.) So, for a given HJ hidden node, its sub-list of #HJ weights will be all 
+together in this format, X-to-HJ weights first followed by HJ-to-Y weights. And then we merely append each 
+hidden node's sub-lists together to form the full MLP list of weights.
 	Thus, our critter format will look something like this:
 			((:crit crit-419) (:fit 241.73) (:wgts 1 2 3 4 ... ))
+			
 Crossover
 	Given that a critter's DNA is a simple list, recall that we can do the usual crossover by picking a 
 location (a list index) to begin the second DNA sub-string. Thus, for the parents, their DNA becomes A
